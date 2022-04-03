@@ -1365,6 +1365,9 @@ class PlayState extends MusicBeatState
 		// cameras = [FlxG.cameras.list[1]];
 		startingSong = true;
 		
+                #if android
+	        addAndroidControls();
+                #end
 
 		if (isStoryMode)
 		{
@@ -1575,6 +1578,10 @@ class PlayState extends MusicBeatState
 
 		inCutscene = false;
 
+		#if android
+	        androidc.visible = true;
+	        #end
+		
 		camHUD.visible = true;
 
 		generateStaticArrows(0);
@@ -2239,7 +2246,9 @@ class PlayState extends MusicBeatState
 		if (!FlxG.save.data.accuracyDisplay)
 			scoreTxt.text = "Score: " + songScore;
 
-		if (FlxG.keys.justPressed.ENTER && startedCountdown && canPause)
+		if ((FlxG.keys.anyJustPressed([pauseBind])#if android || FlxG.android.justReleased.BACK #end)
+			&& startedCountdown
+			&& canPause)
 		{
 			persistentUpdate = false;
 			persistentDraw = true;
