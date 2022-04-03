@@ -24,8 +24,6 @@ import lime.app.Application;
 import openfl.Assets;
 
 
-import Discord.DiscordClient;
-
 #if cpp
 import sys.thread.Thread;
 #end
@@ -40,9 +38,7 @@ class CheckText extends MusicBeatState
 
     override  function create():Void
 	{
-        DiscordClient.changePresence("Inside The Credits Menu", null);
-
-
+        
         var pic:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('menuGB'));
 		pic.setGraphicSize(Std.int(pic.width * 1.0));
 		add(pic);
