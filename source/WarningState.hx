@@ -42,8 +42,6 @@ class WarningState extends MusicBeatState
 
     override  function create():Void
 	{
-        DiscordClient.changePresence("Inside The Opening Menu", null);
-
         FlxG.sound.music.stop();
         warningMusic = new FlxSound().loadEmbedded(Paths.music("PauseTheme-Soft", "shared"), true, true);
 		warningMusic.volume = 0;
