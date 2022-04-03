@@ -350,7 +350,19 @@ class DialogueBox extends FlxSpriteGroup
 
 		}
 
-		if (FlxG.keys.justPressed.ANY && dialogueStarted == true && canAdvance && !isEnding)
+		var pressedEnter:Bool = PlayerSettings.player1.controls.ACCEPT;
+
+		#if mobile
+		for (touch in FlxG.touches.list)
+		{
+			if (touch.justPressed)
+			{
+				pressedEnter = true;
+			}
+		}
+		#end
+
+		if (pressedEnter && dialogueStarted == true)
 		{
 			remove(dialogue);
 			canAdvance = false;
