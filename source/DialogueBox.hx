@@ -362,7 +362,7 @@ class DialogueBox extends FlxSpriteGroup
 		}
 		#end
 
-		if (pressedEnter && dialogueStarted == true)
+		if (pressedEnter && dialogueStarted == true && canAdvance && !isEnding)
 		{
 			remove(dialogue);
 			canAdvance = false;
