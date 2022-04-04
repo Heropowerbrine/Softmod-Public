@@ -62,11 +62,6 @@ class WarningState extends MusicBeatState
 		add(dropText);
         FlxTween.tween(pic, {alpha: 1}, 1.2, {ease: FlxEase.circOut});
         FlxTween.tween(dropText, {alpha: 1}, 1.2, {ease: FlxEase.circOut});
-       
-	#if android
-	addVirtualPad(NONE, A);
-        #end	
-		
     }
 
 
@@ -88,11 +83,23 @@ Enjoy the story.
 (Press any key to continue)";
         dropText.visible = true;
         dropText.screenCenter();
-         if (controls.ACCEPT)
+         if (FlxG.keys.justPressed.ANY)
 		{
             FlxG.sound.music.stop();
             FlxG.switchState(new MainMenuState());
 		}
+
+        var pressedEnter:Bool = PlayerSettings.player1.controls.ACCEPT;
+
+        #if mobile
+	    for (touch in FlxG.touches.list)
+		{
+		    if (touch.justPressed)
+		    {
+			    pressedEnter = true;
+		    }
+		}
+		#end
        
     }
 }
