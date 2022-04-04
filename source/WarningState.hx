@@ -88,7 +88,7 @@ Enjoy the story.
 (Press any key to continue)";
         dropText.visible = true;
         dropText.screenCenter();
-         if (FlxG.keys.justPressed.ANY)
+         if (controls.ACCEPT)
 		{
             FlxG.sound.music.stop();
             FlxG.switchState(new MainMenuState());
