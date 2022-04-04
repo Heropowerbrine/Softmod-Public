@@ -83,13 +83,7 @@ Enjoy the story.
 (Press any key to continue)";
         dropText.visible = true;
         dropText.screenCenter();
-         if (FlxG.keys.justPressed.ANY)
-		{
-            FlxG.sound.music.stop();
-            FlxG.switchState(new MainMenuState());
-		}
-
-        var pressedEnter:Bool = PlayerSettings.player1.controls.ACCEPT;
+         var pressedEnter:Bool = PlayerSettings.player1.controls.ACCEPT;
 
         #if mobile
 	    for (touch in FlxG.touches.list)
@@ -100,6 +94,12 @@ Enjoy the story.
 		    }
 		}
 		#end
-       
+
+         if (pressedEnter)
+		{
+            FlxG.sound.music.stop();
+            FlxG.switchState(new MainMenuState());
+		}
+      
     }
 }
