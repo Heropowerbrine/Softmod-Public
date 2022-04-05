@@ -80,7 +80,7 @@ PTSD,
 Mentions of Pico’s School,
 If you are a victim of domestic violence, remember that you aren’t alone.
 Enjoy the story.
-(Press any key to continue)";
+(Press anywhere to continue)";
         dropText.visible = true;
         dropText.screenCenter();
          var pressedEnter:Bool = PlayerSettings.player1.controls.ACCEPT;
