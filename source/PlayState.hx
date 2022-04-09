@@ -1562,6 +1562,7 @@ class PlayState extends MusicBeatState
 		var black:FlxSprite = new FlxSprite(-256, -256).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
 		black.scrollFactor.set(0);
 		inCutscene = true;
+	        androidc.visible = false;
 		black.alpha = 0;
 		add(black);
 		camHUD.visible = false;
