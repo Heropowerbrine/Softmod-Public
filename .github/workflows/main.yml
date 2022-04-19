@@ -60,7 +60,6 @@ jobs:
           haxelib install hscript --quiet
           haxelib install newgrounds --quiet
           haxelib git faxe https://github.com/uhrobots/faxe --quiet
-          haxelib remove polymod
           haxelib git polymod https://github.com/MasterEric/polymod.git --quiet
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc --quiet
           haxelib git linc_luajit https://github.com/jigsaw-4277821/linc_luajit.git --quiet
